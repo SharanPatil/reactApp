@@ -1,0 +1,190 @@
+{
+	"data":[
+	  {
+		"id": 1,
+		"category": "Magazines",
+		"name": "Aldap",
+		"details": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+		"amount": 20.00,
+		"images": [
+			"assets/images/1.jpg",
+			"assets/images/2.jpg"
+		],		
+		"description": "This book takes you through the history of Dieter Rams’ 30 plus years at Braun. Written by Sophie Lovell and a forward by Apple’s Senior Vice President of Design, Jony Ivy.",
+		"color":[],
+		"additional_information": {
+		  "title": "Additional information",
+		  "color": "",
+		  "dimensions": "",
+		  "materials": "Nylon",
+		  "pages": "32"
+		},
+		"reviews": {
+		  "title": "Reviews",
+		  "user_reviews": [],
+		  "no_reviews": "There are no reviews yet."
+		}
+	  },
+	  {
+		"id": 2,
+		"category": "Magazines",
+		"name": "The Age of Collage",
+		"details": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+		"amount": 18.00,
+		"images": [
+			"assets/images/3.jpg",
+			"assets/images/4.jpg"
+		],		
+		"description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+		"color":[],
+		"additional_information": {
+		  "title": "Additional information",
+		  "color": "",
+		  "dimensions": "H:1.5\" x W: 2.75\" x D: 3.0\"",
+		  "materials": "",
+		  "pages": ""		  		  
+		},
+		"reviews": {
+		  "title": "Reviews",
+		  "user_reviews": [
+			  {
+				"user": "Cobus Bester",
+				"date": "June 7, 2013",
+				"data": "Simple and effective design. One of my favorites."
+			  }
+		  ],
+		  "no_reviews": "There are no reviews yet."
+		}
+	  },
+	  {
+		"id": 3,
+		"category": "Home",
+		"name": "Analog Clock",
+		"details": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+		"amount": 52.00,
+		"images": [
+			"assets/images/5.jpg",
+			"assets/images/6.jpg",
+			"assets/images/7.jpg"
+		],		
+		"description": "In the mid 1950’s Braun and Dieter Rams introduced German modern industrial design into the common home and office. The products have influenced current companies such as Apple. The Travel Alarm Clock is no exception. Seen most recently influencing the design of the Apple Watch. Crescendo alarm and quiet German quartz movement. Batteries included.",
+		"color":["Black","White"],
+		"additional_information": {
+		  "title": "Additional information",
+		  "color": "Black, White",		  
+		  "dimensions": "H:1.5\" x W: 2.75\" x D: 3.0\"",
+		  "materials": "Nylon",
+		  "pages": ""
+		},
+		"reviews": {
+		  "title": "Reviews",
+		  "user_reviews": [],
+		  "no_reviews": "There are no reviews yet."
+		}
+	  },
+	  {
+		"id": 4,
+		"category": "Home",
+		"name": "Boskke Cube",
+		"details": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+		"amount": 18.00,
+		"images": [
+			"assets/images/8.jpg",
+			"assets/images/9.jpg"
+		],		
+		"description": "The Boskke Cube is a self-watering planter that is perfect for herbs and houseplants. Recommended for both green and brown thumbs, simply fill the cube with water and let the plant absorb the water through the terra-cotta base and have fresh herb ingredients for any meal.",
+		"color":[],
+		"additional_information": {
+		  "title": "Additional information",
+		  "color": "",
+		  "dimensions": "H:1.5\" x W: 2.75\" x D: 3.0\"",
+		  "materials": "Nylon",
+		  "pages": ""
+		},
+		"reviews": {
+		  "title": "Reviews",
+		  "user_reviews": [
+			{
+				"user": "Stuart",
+				"date": "June 7, 2013",
+				"data": "This will go great with my Hoodie that I ordered a few weeks ago."
+			},
+			{
+				"user": "Maria",
+				"date": "June 7, 2013",
+				"data": "Love this shirt! The ninja near and dear to my heart. <3"
+			}
+		  ],
+		  "no_reviews": "There are no reviews yet."
+		}
+	  },
+	  {
+		"id": 5,
+		"category": "Office",
+		"name": "Digital Clock",
+		"details": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+		"amount": 25.00,
+		"images": [
+			"assets/images/10.jpg",
+			"assets/images/11.jpg",
+			"assets/images/12.jpg"
+		],		
+		"description": "In the mid 1950’s Braun and Dieter Rams introduced German modern industrial design into the common house and office. The products have influenced current companies such as Apple. This clock won the Red dot award for product design in 2012 and an IF gold award for product design in 2013. Batteries included",
+		"color":["Black","White"],
+		"additional_information": {
+		  "title": "Additional information",
+		  "color": "Black, White",		  
+		  "dimensions": "H:1.5\" x W: 2.75\" x D: 3.0\"",
+		  "materials": "Aluminium, Copper, Nylon",
+		  "pages": ""
+		},
+		"reviews": {
+		  "title": "Reviews",
+		  "user_reviews": [
+			{
+				"user": "Cobus Bester",
+				"date": "June 7, 2013",
+				"data": "The ninja silhouette is one of my favorite designs. This is a great product."
+			}
+		  ],
+		  "no_reviews": "There are no reviews yet."
+		}
+	  },
+	  {
+		"id": 6,
+		"category": "Office",
+		"name": "Medium Notebook",
+		"details": "The cover is made in Japan from starch-pressed cotton. Four color ways that fade with use and stay true to the wabi sabi tradition. The steel binding is set on the back cover to create a nice spine and the versatile paper is ecologically made and chlorine free. Pages are printed with 1x1mm blue graph paper.",
+		"amount": 25.00,
+		"images": [
+			"assets/images/13.jpg",
+			"assets/images/14.jpg"
+		],		
+		"description": "The cover is made in Japan from starch-pressed cotton. Four color ways that fade with use and stay true to the wabi sabi tradition. The steel binding is set on the back cover to create a nice spine and the versatile paper is ecologically made and chlorine free. Pages are printed with 1x1mm blue graph paper.",
+		"color":["Yellow","Red"],
+		"additional_information": {
+		  "title": "Additional information",
+		  "color": "Yellow, Red",
+		  "dimensions": "",
+		  "materials": "",
+		  "pages": ""
+		},
+		"reviews": {
+		  "title": "Reviews",
+		  "user_reviews": [
+			{
+				"user": "Student",
+				"date": "June 7, 2013",
+				"data": "Perfect Hoodie for a Ninja!"
+			},
+			{
+				"user": "Coen Jacobs",
+				"date": "June 7, 2013",
+				"data": "I have lots of hoodies, but none is as cool as this one!"
+			}
+		  ],
+		  "no_reviews": "There are no reviews yet."
+		}
+	  }
+	]
+}

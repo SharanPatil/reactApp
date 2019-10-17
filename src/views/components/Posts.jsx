@@ -8,6 +8,7 @@ import axios from 'axios';
 import SweetAlert from 'sweetalert-react';
 
 export default class Posts extends React.Component {
+	
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -24,6 +25,7 @@ export default class Posts extends React.Component {
 			addPost:false
 		}
 	  }
+
 	componentDidMount() {	
 	  var _self = this;
 	  

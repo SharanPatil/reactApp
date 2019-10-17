@@ -81,7 +81,7 @@ class ModalDetails extends React.Component {
 		  )
 		 });
       return (
-         <div>
+         <div className="modal-details">
 		 ModalManager.open(<div className="detail-modal">
 			  <Modal onRequestClose={this.modalClose.bind(this)} effect={Effect.ScaleUp} style={style}>
 				<Row className="modal-header">
@@ -109,8 +109,8 @@ class ModalDetails extends React.Component {
 				</Row>
 			  </Modal>
 			</div>
-         </div>
-      )
+      );
+	  </div>)
    }
 }
 export default ModalDetails;

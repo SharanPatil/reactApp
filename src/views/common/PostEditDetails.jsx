@@ -94,7 +94,7 @@ class PostEditDetails extends React.Component {
 	   let rowData = this.state.data; 
 	   
       return (
-         <div>
+         <div className="modal-details">
 		 ModalManager.open(<div className="detail-modal">
 			  <Modal onRequestClose={this.modalClose.bind(this)} effect={Effect.ScaleUp} style={style}>
 				<Row className="modal-header">
@@ -140,8 +140,9 @@ class PostEditDetails extends React.Component {
 				</Row>
 			  </Modal>
 			</div>
-         </div>
-      )
+      );
+	  
+         </div>)
    }
 }
 export default PostEditDetails;
