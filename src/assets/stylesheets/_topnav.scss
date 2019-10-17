@@ -1,0 +1,26 @@
+.navbar{
+	background-color: #fff;
+	height: 52px;
+    line-height: 52px;
+	margin: 0;
+    
+    ul a {
+		color:#555;
+	}
+	.navbar-brand{
+		color:#ff4f40;
+		font-weight:bold;
+	}
+	.navbar-collapse{
+		float:right;
+	}
+	a{
+		color: #555;
+		font-size: 16px;
+	}
+	.navbar-nav>.active>a, .navbar-nav>.active>a:focus, .navbar-nav>.active>a:hover {
+		color: #555;
+		background-color: #fff;
+		border-bottom: 2px solid #ff4f40;
+	}
+}
