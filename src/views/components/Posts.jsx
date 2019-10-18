@@ -57,7 +57,6 @@ export default class Posts extends React.Component {
 	  EditPostDetails(rowData, e) {
 		var _self = this;
 		_self.setState({rowData: rowData, modalOpen:false, editModalOpen:true, successRedirect: false, errorMessege:false});
-		console.log('AAAAAAAAAAA');
 	  }
 	modalClose(){
 		var _self = this;
@@ -75,9 +74,8 @@ export default class Posts extends React.Component {
 		_self.setState({rowData: [],modalOpen:false, editModalOpen:false});
 	}
 	editModalClose(data){
-		var _self = this;
-		console.log('DATA:',data);
-		
+		var _self = this;		
+		console.log('Edit Post DATA:',data);
 		var posts_url = "https://jsonplaceholder.typicode.com/posts";
 		axios.get(posts_url, {
 		  headers: {
@@ -86,16 +84,23 @@ export default class Posts extends React.Component {
 		}).then(function(response) {
 		  var result = _self.state.data;
 		  
-		  if(response.status == 200){
-			  
-			for(var i = 0; i<result.length; i++){
-				if(result[i]. id == data.id){
-				   result[i].title = data.title;
-				   result[i].body = data.body;
+			if(response.status == 200){
+				var message = 0;  
+				for(var i = 0; i<result.length; i++){
+					if(result[i]. id == data.id){
+						if(result[i].title == data.title && result[i].body == data.body){
+							message = 1;
+						}
+					   result[i].title = data.title;
+					   result[i].body = data.body;
+					}
 				}
-			}
-			_self.setState({data:result,rowData: [],modalOpen:false, editModalOpen:false,successRedirect: true, statusMessageClass: "success-status-messege__container", statusMessageClassImg: "success-icon", statusMessage: "Successfully edited post."});  
-		  }	  
+				if(message == 0){
+					_self.setState({data:result,rowData: [],modalOpen:false, editModalOpen:false,successRedirect: true, statusMessageClass: "success-status-messege__container", statusMessageClassImg: "success-icon", statusMessage: "Successfully edited post."});  
+				}else{
+					_self.setState({data:result,rowData: [],modalOpen:false, editModalOpen:false});  
+				}
+			}	  
 		  
 		});
 		  
@@ -103,7 +108,7 @@ export default class Posts extends React.Component {
 	deletePost(id){
 		var _self = this;
 		var postId = id;
-		console.log('postId:',postId);
+		console.log('Delete postId:',postId);
 		var jsonArray = _self.state.data;
 		/*
 		var posts_url = "https://jsonplaceholder.typicode.com/posts/"+postId;
@@ -125,7 +130,7 @@ export default class Posts extends React.Component {
 		*/
 		fetch('https://jsonplaceholder.typicode.com/posts/'+id, {
 		  method: 'DELETE'
-		}).then(response => {console.log(response);
+		}).then(response => {
 		if(response.status == 200){
 			for(var i = 0; i<jsonArray.length; i++){
 				if(jsonArray[i]. id == postId){
@@ -138,12 +143,13 @@ export default class Posts extends React.Component {
 	}
 	AddPostDetails(){
 		var _self = this;
-		_self.setState({addPost:true});
+		_self.setState({addPost:true, successRedirect: false, errorMessege:false});
 		
 	}
 	addModalClose(data){
 		var _self = this;
 		var jsonArray = _self.state.data;
+		console.log('Add Post DATA:',data);
 		if(data){
 			/*	
 		var posts_url = "https://jsonplaceholder.typicode.com/posts";
@@ -165,13 +171,13 @@ export default class Posts extends React.Component {
 				}
 			  })
 			  .then(response => response.json())
-			  .then(json => {console.log(json);
+			  .then(json => {
 				jsonArray.push(json);
 				
 				_self.setState({addPost:false,data:jsonArray,successRedirect: true, statusMessageClass: "success-status-messege__container", statusMessageClassImg: "success-icon", statusMessage: "Successfully added item."});
 			  })
 		}else{
-			_self.setState({addPost:false});
+			_self.setState({addPost:false,data:jsonArray});
 			  
 		}
 	}
@@ -183,8 +189,8 @@ export default class Posts extends React.Component {
 
   }
 	render() {
-	   const {data, rowData, modalOpen, editModalOpen,errorMessege, successRedirect,addPost} = this.state;
-	   let actions = (props) => {
+		const {data, rowData, modalOpen, editModalOpen,errorMessege, successRedirect,addPost} = this.state;
+		let actions = (props) => {
 		  var rowData = props.record;
 
 		  return (<div className="actionBtns">

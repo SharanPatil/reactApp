@@ -22,8 +22,7 @@ class ProductCheckout extends React.Component {
 		var _self = this;
 		var data = _self.state.data;
 		var cartItem = _self.state.cartItem;
-		console.log('Product:::',data);
-		console.log('Selected cartItem:::',cartItem);
+		console.log('Selected cartItems:::',cartItem);
 		var amount = 0;
 		return(
 			<div className="place_item">
@@ -48,15 +47,15 @@ class ProductCheckout extends React.Component {
 					</Col>
 				</Row>
 				{
-					cartItem.map(function(placeditem){
-						return(<div className="selected_item" key={placeditem.id}>
+					cartItem.map(function(placeditem,key1){
+						return(<div className="selected_item" key={key1}>
 						{
-							data.map(function(item){
+							data.map(function(item,key){
 								if(placeditem.id == item.id){
 									var totalamount = item.amount * placeditem.quantity;
 									amount = amount + totalamount;
 									return(
-										<Row key={item.id}>
+										<Row key={key}>
 											<Col s={2}>
 												<img src={item.images[0]} alt="image_card" width="100px" height="100px"/>
 											</Col>
@@ -70,11 +69,11 @@ class ProductCheckout extends React.Component {
 												${parseFloat(item.amount).toFixed(2)}
 											</Col>
 											<Col s={2}>
-												<span className="actions_pageview" onClick={_self.editQuantity.bind(_self,placeditem.id,'remove')}>
+												<span className="actions_pageview" onClick={_self.editQuantity.bind(_self,placeditem.id,placeditem.color,'remove')}>
 												  <i className="fa fa-minus-circle" title="edit"></i>
 												</span>
 												<span className="placeditem_quantity">{placeditem.quantity}</span>
-												<span className="actions_pageview" onClick={_self.editQuantity.bind(_self,placeditem.id,'add')}>
+												<span className="actions_pageview" onClick={_self.editQuantity.bind(_self,placeditem.id,placeditem.color,'add')}>
 												  <i className="fa fa-plus-circle" title="edit"></i>
 												</span>
 											</Col>
@@ -99,30 +98,32 @@ class ProductCheckout extends React.Component {
 				</Row>
 				<Row>
 					<Col s={12}>
-						<Button onClick={_self.Checkout.bind(_self)}>Place Item</Button>
+						<Button onClick={_self.Checkout.bind(_self,cartItem)}>{cartItem.length>0?'Place Item':'Products'}</Button>
 					</Col>
 				</Row>	
 			
 			</div>
 		)
 	}
-	editQuantity(id,condition,e){
+	editQuantity(id,color,condition,e){
 		var cartItem = this.state.cartItem;
 		
 		if(condition=='add'){
 			for(var i = 0; i<cartItem.length; i++){
-				if(cartItem[i]. id == id){
+				if(cartItem[i]. id == id && cartItem[i]. color == color){
 				   cartItem[i].quantity = cartItem[i].quantity + 1; 
-				   //jsonArray.splice(i, 1);
+				   console.log("Added Item quantity:",cartItem[i]);
 				}
 			}
 		}else{
 			for(var i = 0; i<cartItem.length; i++){
-				if(cartItem[i]. id == id){
+				if(cartItem[i]. id == id && cartItem[i]. color == color){
 					if(cartItem[i].quantity == 1){
 						cartItem.splice(i, 1);
+						console.log("Removed Item from cart:",cartItem[i]);
 					}else{
-						cartItem[i].quantity = cartItem[i].quantity - 1; 				   
+						cartItem[i].quantity = cartItem[i].quantity - 1;
+						console.log("Removed Item quantity:",cartItem[i]);						
 					}
 				   
 				}
@@ -130,8 +131,8 @@ class ProductCheckout extends React.Component {
 		}
 		this.setState({cartItem:cartItem});
 	}
-	Checkout(){
-		this.props.onClose();
+	Checkout(cartItem,e){
+		this.props.onClose(cartItem);
 	}
    render() {
 	   const {data,cartItem} = this.state;

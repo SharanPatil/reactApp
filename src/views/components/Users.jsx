@@ -70,7 +70,7 @@ export default class Posts extends React.Component {
 			sortable: true
 		  }, {
 			name: 'username',
-			displayName: "UserName",
+			displayName: "User Name",
 			inputFilterable: true,
 			exactFilterable: false,
 			sortable: true
@@ -82,7 +82,7 @@ export default class Posts extends React.Component {
 			sortable: true
 		  }, {
 			name: 'phone',
-			displayName: "phone",
+			displayName: "Phone",
 			inputFilterable: true,
 			exactFilterable: false,
 			sortable: true

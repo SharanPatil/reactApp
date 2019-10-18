@@ -27,7 +27,7 @@ var style = {
 		border: '0',
 		borderRadius: '0',
 		padding: '0',
-		top: '0',
+		top: '100px',
 		right: '0',
 		left: '0',
 		bottom: '0'
@@ -58,7 +58,6 @@ class Product extends React.Component {
 	}
 	displayProductContent() {
     var _self = this;
-    //console.log(_self);
 
     return (<div>
         <div className="container-main">
@@ -84,8 +83,7 @@ class Product extends React.Component {
     </div>)
   }
   openModal(item, e) {
-
-    ModalManager.open(<div>
+	ModalManager.open(<div>
       <Modal onRequestClose={ModalManager.close} effect={Effect.ScaleUp} style={style}>
         <Row className="modal-header">
           <Col s={10}>
@@ -110,19 +108,19 @@ class Product extends React.Component {
             </Col>
           </Row>
       </Modal>
-    </div>);
+    </div>)
   }
   AddItem(item,e){
 	  var _self = this;
 		_self.setState({selectedProduct: item,addToCart:true,successRedirect: false,errorMessege: false});
-		console.log("item::",item);	  
+		console.log("Add Item::",item);	  
   }
   onClose(item){
 	  var _self = this;
 	  var cartItem = _self.state.cartItem;
 	  var count = 0;
 	  for(var i = 0; i<cartItem.length; i++){
-			if(cartItem[i]. id == item.id){
+			if(cartItem[i]. id == item.id && cartItem[i]. color == item.color){
 			   count = 1;
 			   cartItem[i].quantity = parseInt(item.quantity);
 			}
@@ -136,7 +134,7 @@ class Product extends React.Component {
 	  }else{
 		cartItem = cartItem;  
 	  }
-	  
+	  console.log("cartItem::",cartItem);
 	  _self.setState({CheckoutBtn:true,cartItem:cartItem,addToCart:false,successRedirect: true, statusMessageClass: "success-status-messege__container", statusMessageClassImg: "success-icon", statusMessage: "Successfully added new item."});
 
   }
@@ -155,15 +153,18 @@ class Product extends React.Component {
 	var _self = this;  
 	_self.setState({Checkout:true,successRedirect: false,errorMessege: false});  
   }
-  onCloseCheckout(){
+  onCloseCheckout(data){
 	  var _self = this;
+	  if(data.length>0){
+	  console.log("Placed Items from cart:",data);
 	  _self.setState({cartItem:[],addToCart:false,CheckoutBtn:false,Checkout:false,successRedirect: true, statusMessageClass: "success-status-messege__container", statusMessageClassImg: "success-icon", statusMessage: "Successfully placed item."});
-
+	  }else{
+		_self.setState({cartItem:[],addToCart:false,CheckoutBtn:false,Checkout:false});  
+	  }
   }
    render() {
 	   const {addToCart,selectedProduct,product_list,cartItem,errorMessege, successRedirect,Checkout} = this.state;
-	   console.log("cartItem:::",cartItem);
-      return (
+	   return (
          <div className="product">
 			<Navbar/>
             {/*<h1>Product...</h1>*/}

@@ -1,29 +1,31 @@
 import { combineReducers } from 'redux'
-import { ADD_TODO } from '../actions/actions'
+import { ADD_EMP } from '../actions/actions'
 
-function todo(state, action) {
+function emp(state, action) {
    switch (action.type) {
-      case ADD_TODO:
+      case ADD_EMP:
          return {
             id: action.id,
-            text: action.text,
+            empid: action.empid,
+			name:action.name,
+			email:action.email
          }
       default:
          return state
    }
 }
-function todos(state = [], action) {
+function emps(state = [], action) {
    switch (action.type) {
-      case ADD_TODO:
+      case ADD_EMP:
          return [
             ...state,
-            todo(undefined, action)
+            emp(undefined, action)
          ]
       default:
          return state
    }
 }
-const todoApp = combineReducers({
-   todos
+const empApp = combineReducers({
+   emps
 })
-export default todoApp
+export default empApp

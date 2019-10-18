@@ -1,11 +1,10 @@
-export const ADD_TODO = 'ADD_TODO'
+export const ADD_EMP = 'ADD_EMP'
+let nextEmpId = 0;
 
-let nextTodoId = 0;
-
-export function addTodo(text) {
+export function addEmployee(empid,name,email) {
    return {
-      type: ADD_TODO,
-      id: nextTodoId++,
-      text
+      type: ADD_EMP,
+      id: nextEmpId++,
+      empid,name,email
    };
 }

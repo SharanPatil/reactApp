@@ -1,3 +1,6 @@
+body{
+	font-family: 'Dosis';
+}
 .actions_delete {
 	color: #a80f3d;
 	cursor:pointer;
@@ -98,6 +101,7 @@
 }
 
 .modal-body {
+  font-family: 'Dosis';
   height:auto;
   margin-bottom: 15px;  
   max-height:57vh;
@@ -111,25 +115,23 @@
 .modal-close {
   cursor: pointer;
   float: right;
+  font-family: 'Dosis';
   .material-icons {
     line-height: 1.75;
   }
 }
-.modal-details{
-	color: #fff;
-}
-.detail-modal{
-	color: #000;
-}
+
 .modal-header{
 	background: #ff4f40;
     color: #fff;
+	font-family: 'Dosis';
 	padding: 0px;
     h5{
       font-size: 1.4rem;
     }
 }
 .modal-footer{
+	font-family: 'Dosis';
 	.btn,
 	.btn.active.focus, 
 	.btn.active:focus, 
@@ -140,6 +142,7 @@
 	.btn:hover,{
 		background-color: #ff4f40;
 		color:#fff;
+		font-family: 'Dosis';
 		margin-left: 10px;
 	}
 }
@@ -151,6 +154,7 @@
 	box-shadow: none;
 	color:#fff;
 	float: right;
+	font-family: 'Dosis';
 	font-weight: 600;
 	height: 30px;
 	line-height: 0;
@@ -234,4 +238,32 @@
 }
 .redux_example{
 	padding:20px;
+}
+thead {
+		background: #ff4f40;
+		border-radius: 0;
+		border-bottom: 0;
+		color: #ffffff;				
+}
+
+.sweet-alert{
+	font-family: 'Dosis' !important;
+	.confirm,.cancel {
+		background:#ff4f40;
+		border-radius: 18px;
+		box-sizing: none;
+		border: 1px solid #a9a9a9;
+		box-shadow: none;
+		color:#fff;
+		float: right;
+		font-family: 'Dosis' !important;
+		font-weight: 600;
+		height: 30px;
+		line-height: 0;
+		margin-bottom: 10px;
+		padding: 0;
+		text-transform: capitalize;
+		text-align: center;
+		width: 100px;
+	  }
 }

@@ -7,13 +7,11 @@ class Navbar extends React.Component {
 	}
 	
 	selectedLi(lidata,e){
-		console.log("setData::",lidata);
 		window.localStorage.setItem('selectedLi', lidata);
 	}
    render() {
 	   var selectedLi = window.localStorage.getItem('selectedLi');
-	   console.log("getData::",selectedLi);
-      return (
+	   return (
         <div className="top-nav">
 			
 			<nav className = "navbar" role = "navigation">
@@ -41,8 +39,8 @@ class Navbar extends React.Component {
 						<li className={selectedLi=='Product'?'active':''}>
 						  <Link to="/Product" onClick={this.selectedLi.bind(this,'Product')}><span>Product  </span></Link>
 						</li>
-						<li className={selectedLi=='ReduxExample'?'active':''}>
-						  <Link to="/ReduxExample" onClick={this.selectedLi.bind(this,'ReduxExample')}><span>ReduxExample  </span></Link>
+						<li className={selectedLi=='EmployeeList'?'active':''}>
+						  <Link to="/EmployeeList" onClick={this.selectedLi.bind(this,'EmployeeList')}><span>Employee List with Redux  </span></Link>
 						</li>						
 					</ul>
 				</div>

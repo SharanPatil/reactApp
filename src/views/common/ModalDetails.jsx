@@ -50,8 +50,9 @@ class ModalDetails extends React.Component {
 	  
    render() {
 	   let rowData = this.state.data;
-		let title = this.state.title;
-	   console.log("rowData:::",rowData);
+	   let title = this.state.title;
+	   //const {rowData,title}  = this.props;
+	   
 	   var dispDetails = Object.entries(rowData).map(([key,value])=>{
 		  return (
 			<Row key = {key}>
@@ -82,7 +83,7 @@ class ModalDetails extends React.Component {
 		 });
       return (
          <div className="modal-details">
-		 ModalManager.open(<div className="detail-modal">
+		 <div className="detail-modal">
 			  <Modal onRequestClose={this.modalClose.bind(this)} effect={Effect.ScaleUp} style={style}>
 				<Row className="modal-header">
 				  <Col s={10}>
@@ -109,7 +110,6 @@ class ModalDetails extends React.Component {
 				</Row>
 			  </Modal>
 			</div>
-      );
 	  </div>)
    }
 }

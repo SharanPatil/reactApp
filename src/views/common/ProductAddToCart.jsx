@@ -14,38 +14,27 @@ class ProductAddToCart extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			data:this.props.data,
-			cartItem:this.props.cartItem,
-			quantity: 1
+			data:[],
+			cartItem:[],
+			quantity: 1,
+			color:""
 		}
 	  }
-		componentDidMount(){
+		componentWillMount(){
 			var _self = this;
-			var cartItem = _self.state.cartItem;
-			var data = _self.state.data;
+			var cartItem = this.props.cartItem;
+			var data = this.props.data;
 			var quantity = 1;
+			var color = "";
 			for(var i=0;i<cartItem.length;i++){
 				if(cartItem[i].id==data.id){
 					quantity = cartItem[i].quantity;
+					color = cartItem[i].color;
 				}
 			}
-			_self.setState({quantity:quantity});
+			_self.setState({data:data,cartItem:cartItem,quantity:quantity,color:color});
 		}
-	  colors(color,e){
-		 return (
-		 <select className="select_color" name="select_color" id="select_color">
-			<option value="" selected>Select Color</option>
-			{
-				color.map((color) => {
-					return (
-								<option key={color} value={color}>color</option>
-							)
-				})
-				
-			}
-		 </select>
-			)
-	  }
+	  
 	  AddItem(){
 		  var _self = this;
 		  var id = document.getElementById('id').value;
@@ -63,7 +52,7 @@ class ProductAddToCart extends React.Component {
 			  'quantity': quantity
 		  };
 		  
-		  console.log('ITEM::',data);
+		  console.log('Added ITEM::',data);
 		  _self.props.onClose(data);
 	  }
 	  image_slider(){
@@ -119,14 +108,21 @@ class ProductAddToCart extends React.Component {
 			</div>
 		  )
 	  }
+	  shouldComponentUpdate(nextProps, nextState) {
+		if(this.state.data.length !== 0) {
+			return (this.state.data !== nextState.data);
+		}
+		else
+		{
+			return true
+		}
+	  }
    render() {
-	   const {data,cartItem,quantity} = this.state;
-	   console.log('Selected Product:::',data);
-	   console.log('cartItem:::',cartItem);
-	   console.log('quantity:::',quantity);
+	   const {data,cartItem,quantity,color} = this.state;
+	   
       return (
 			<div className="item-container-main">
-				<Row>
+			 	<Row>
 					<Col s={6}>
 						{/*<img src={data.images[0]} alt="image_card"/>*/}
 							{this.image_slider()}
@@ -144,8 +140,8 @@ class ProductAddToCart extends React.Component {
 									<b>Color:</b>
 								</Col>
 								<Col s={6}>
-								<select name="color" id="color" required>
-									<option value="" selected>Select Color</option>
+								<select name="color" id="color" required defaultValue={color}>
+									<option value="">Select Color</option>
 									{
 										data.color.map(function(item){
 											return(
@@ -163,17 +159,17 @@ class ProductAddToCart extends React.Component {
 						<div className="quantity_block">
 							<Row>
 								<Col s={6}>
-									<select name="quantity" id="quantity" required>
-										<option value="1" selected={quantity==1?'selected':''}>1</option>
-										<option value="2" selected={quantity==2?'selected':''}>2</option>
-										<option value="3" selected={quantity==3?'selected':''}>3</option>
-										<option value="4" selected={quantity==4?'selected':''}>4</option>
-										<option value="5" selected={quantity==5?'selected':''}>5</option>
-										<option value="6" selected={quantity==6?'selected':''}>6</option>
-										<option value="7" selected={quantity==7?'selected':''}>7</option>
-										<option value="8" selected={quantity==8?'selected':''}>8</option>
-										<option value="9" selected={quantity==9?'selected':''}>9</option>
-										<option value="10" selected={quantity==10?'selected':''}>10</option>
+									<select name="quantity" id="quantity" required defaultValue={quantity}>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
 									</select>
 								</Col>
 								<Col s={6}>

@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {browserHistory, BrowserRouter, Route} from 'react-router-dom';
+//import {browserHistory, BrowserRouter, Route} from 'react-router-dom';
 import SCSS from './assets/stylesheets/application.scss';
 
 
-import Routes from './views/routes/Routes.jsx';
-import { createHistory } from 'history';
+import AppRoutes from './views/routes/Routes.jsx';
+//import { createHistory } from 'history';
 
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import todoApp from './views/components/reducers/reducers';
+import empApp from './views/components/reducers/reducers';
 
-let store = createStore(todoApp);
+let store = createStore(empApp);
 
-ReactDOM.render(<Provider store = {store}><Routes history={createHistory}/></Provider>, document.getElementById('app'));
+ReactDOM.render(<Provider store = {store}><AppRoutes/></Provider>, document.getElementById('app'));

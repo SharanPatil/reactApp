@@ -42,7 +42,7 @@ class PostAddDetails extends React.Component {
 	  }
 	  modalClose(){
 		ModalManager.close;	
-		var json = {};		
+		var json = null;		
 		this.props.modalAddClose(json);
 	  }
 	  addPost(e){
@@ -52,8 +52,6 @@ class PostAddDetails extends React.Component {
 			var title = document.getElementById("title").value;
 			var body = document.getElementById("body").value;
 			var userid = document.getElementById("id").value;
-			
-			console.log("userid:",userid,":Title:",title,":Body:",body);
 			var data = {
 				'userid': userid,
 				'title':title,
@@ -67,7 +65,7 @@ class PostAddDetails extends React.Component {
 	  
       return (
          <div className="modal-details">
-		 ModalManager.open(<div className="detail-modal">
+		 <div className="detail-modal">
 			  <Modal onRequestClose={this.modalClose.bind(this)} effect={Effect.ScaleUp} style={style}>
 				<Row className="modal-header">
 				  <Col s={10}>
@@ -112,8 +110,6 @@ class PostAddDetails extends React.Component {
 				</Row>
 			  </Modal>
 			</div>
-      );
-	  
          </div>)
    }
 }

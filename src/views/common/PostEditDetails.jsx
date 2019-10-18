@@ -54,8 +54,6 @@ class PostEditDetails extends React.Component {
 			var title = document.getElementById("titleEdit").value;
 			var body = document.getElementById("bodyEdit").value;
 			var id = document.getElementById("IdEdit").value;
-			
-			console.log("ID:",id,":Title:",title,":Body:",body);
 			var data = {
 				'id': id,
 				'title':title,
@@ -83,7 +81,7 @@ class PostEditDetails extends React.Component {
 				}
 			  })
 			  .then(response => response.json())
-			  .then(json => {console.log(json);
+			  .then(json => {
 				this.props.modalClose(json);
 			  })
 				
@@ -95,7 +93,7 @@ class PostEditDetails extends React.Component {
 	   
       return (
          <div className="modal-details">
-		 ModalManager.open(<div className="detail-modal">
+		 <div className="detail-modal">
 			  <Modal onRequestClose={this.modalClose.bind(this)} effect={Effect.ScaleUp} style={style}>
 				<Row className="modal-header">
 				  <Col s={10}>
@@ -140,8 +138,6 @@ class PostEditDetails extends React.Component {
 				</Row>
 			  </Modal>
 			</div>
-      );
-	  
          </div>)
    }
 }
