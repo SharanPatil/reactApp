@@ -9,8 +9,17 @@ class Navbar extends React.Component {
 	selectedLi(lidata,e){
 		window.localStorage.setItem('selectedLi', lidata);
 	}
+	componentWillMount(){
+		var selectedLi = window.location.hash.substring(2);
+		  if(selectedLi.length>0){
+			window.localStorage.setItem('selectedLi', selectedLi);
+		  }else{
+			window.localStorage.setItem('selectedLi', 'Home');
+		  }
+	}
    render() {
 	   var selectedLi = window.localStorage.getItem('selectedLi');
+	   
 	   return (
         <div className="top-nav">
 			

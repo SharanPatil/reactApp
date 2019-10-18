@@ -1,0 +1,269 @@
+body{
+	font-family: 'Dosis';
+}
+.actions_delete {
+	color: #a80f3d;
+	cursor:pointer;
+	font-size: 16px;
+	margin-right: 10px;
+}
+.actions_mode_edit {
+	color: #407cc9;
+	cursor:pointer;
+	font-size: 16px;
+	margin-right: 10px;	
+}
+.actions_pageview {
+	color: #00946d;
+	cursor:pointer;
+	font-size: 16px;	
+	margin-right: 10px;	
+}
+
+.filterable-table-container {
+	display: inline-block;	
+	padding: 10px;
+	width: 100%;
+	
+	.header-row {
+		margin: 0;
+		select {
+			display: inline-block;
+			height: auto;
+			margin-left: 2rem;
+			position: relative;
+			width: auto;
+		}
+
+		.filter-container {
+		    padding: 0;
+			.filter-input::-webkit-input-placeholder{
+				content:"";
+			}
+			.clear-filter {
+				display: none;
+			}
+		}
+	}
+
+	.table-container {
+		margin: 10px 0;
+		max-height: 445px;
+		overflow: auto;
+    
+		.filterable-table {
+			thead {
+				    background: #ff4f40;
+					border-radius: 0;
+					border-bottom: 0;
+					color: #ffffff;				
+			}
+
+			td,
+			th {
+				border-radius: 0;
+				height: 40px;
+				min-width: 100px;				
+			}
+
+			th {
+			        
+				.fa-sort,
+				.fa-sort-asc,
+				.fa-sort-desc {
+					margin-left: 10px;
+				}
+			}
+		}
+		nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
+			background-color: #fff;
+			height: auto;
+		}
+		.pagination{
+			float: right;
+		}
+		.pagination>li:not(.disabled)>a, .pagination>li:not(.disabled)>span {
+			cursor: pointer;
+		}
+		.pagination>.active>a, 
+		.pagination>.active>a:focus, 
+		.pagination>.active>a:hover, 
+		.pagination>.active>span, 
+		.pagination>.active>span:focus, 
+		.pagination>.active>span:hover {
+			z-index: 3;
+			color: #fff;
+			cursor: default;
+			background-color: #ff4f40;
+			border-color: #ff4f40;
+		}
+	}
+}
+
+.modal-body {
+  font-family: 'Dosis';
+  height:auto;
+  margin-bottom: 15px;  
+  max-height:57vh;
+  overflow: auto;
+  text-align: justify;
+
+	textarea{
+		height: 100px;
+	}
+}
+.modal-close {
+  cursor: pointer;
+  float: right;
+  font-family: 'Dosis';
+  .material-icons {
+    line-height: 1.75;
+  }
+}
+
+.modal-header{
+	background: #ff4f40;
+    color: #fff;
+	font-family: 'Dosis';
+	padding: 0px;
+    h5{
+      font-size: 1.4rem;
+    }
+}
+.modal-footer{
+	font-family: 'Dosis';
+	.btn,
+	.btn.active.focus, 
+	.btn.active:focus, 
+	.btn.focus, 
+	.btn:active.focus, 
+	.btn:active:focus, 
+	.btn:focus,
+	.btn:hover,{
+		background-color: #ff4f40;
+		color:#fff;
+		font-family: 'Dosis';
+		margin-left: 10px;
+	}
+}
+.btn {
+	background:#ff4f40;
+	border-radius: 18px;
+	box-sizing: none;
+	border: 1px solid #a9a9a9;
+	box-shadow: none;
+	color:#fff;
+	float: right;
+	font-family: 'Dosis';
+	font-weight: 600;
+	height: 30px;
+	line-height: 0;
+	margin-bottom: 10px;
+	padding: 0;
+	text-transform: capitalize;
+	text-align: center;
+	width: 150px;
+  }
+.btn,
+.btn.active.focus, 
+.btn.active:focus, 
+.btn.focus, 
+.btn:active.focus, 
+.btn:active:focus, 
+.btn:focus,
+.btn:hover,{
+	background-color: #ff4f40;
+	color:#fff;
+	margin-left: 10px;
+}
+
+
+.status-messege__container {
+  background-color: #ffecec;
+  border: 1px solid #e68986;
+  color: #d41616;
+  font-size: 14px;
+  flex: 1 1 auto;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+
+  .error-icon:before {
+    content: "\f057";
+    font-family: "FontAwesome";
+    font-size: 20px !important;
+    vertical-align: middle;
+  }
+}
+
+.success-status-messege__container {
+  background-color: #e9ffd9;
+  border: 1px solid #58af18;
+  color: #58af18;
+  font-size: 14px;
+  flex: 1 1 auto;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+
+  .success-icon:before {
+    content: "\f058";
+    font-family: "FontAwesome";
+    font-size: 20px !important;
+    vertical-align: middle;
+  }
+}
+.active-status-messege__container {
+  background-color: #e9ffd9;
+  border: 1px solid #58af18;
+  color: #58af18;
+  font-size: 14px;
+  flex: 1 1 auto;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+  max-width:700px;
+
+  .success-icon:before {
+    content: "\f058";
+    font-family: "FontAwesome";
+    font-size: 20px !important;
+    vertical-align: middle;
+  }
+}
+.home-container{
+	h6,p{
+		padding:20px;
+	}
+}
+.redux_example{
+	padding:20px;
+}
+thead {
+		background: #ff4f40;
+		border-radius: 0;
+		border-bottom: 0;
+		color: #ffffff;				
+}
+
+.sweet-alert{
+	font-family: 'Dosis' !important;
+	.confirm,.cancel {
+		background:#ff4f40;
+		border-radius: 18px;
+		box-sizing: none;
+		border: 1px solid #a9a9a9;
+		box-shadow: none;
+		color:#fff;
+		float: right;
+		font-family: 'Dosis' !important;
+		font-weight: 600;
+		height: 30px;
+		line-height: 0;
+		margin-bottom: 10px;
+		padding: 0;
+		text-transform: capitalize;
+		text-align: center;
+		width: 100px;
+	  }
+}

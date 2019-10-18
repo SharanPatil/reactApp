@@ -9,7 +9,6 @@ export default class AddEmp extends Component {
 		const empid = this.refs.empid.value.trim();
 		const name = this.refs.name.value.trim();
 		const email = this.refs.email.value.trim();
-		console.log('AddEmp');
 		this.props.onAddClick(empid,name,email);
 		this.refs.empid.value = '';
 		this.refs.name.value = '';
